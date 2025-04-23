@@ -5,7 +5,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
-    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5wT7HXY6c5OqlsAmDZCchP2ese-zZ0DfrPQ&s");
+    background-image:url("https://media.crictracker.com/media/featureimage/CT_347356.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
@@ -50,7 +50,7 @@ a:hover {
 }
 
 .hi{
-    color:black;
+    color:white;
     font-size: 40px;
     font-family: "Times New Roman", Times, serif;
 }
