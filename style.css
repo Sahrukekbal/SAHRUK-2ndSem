@@ -5,6 +5,12 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5wT7HXY6c5OqlsAmDZCchP2ese-zZ0DfrPQ&s");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    padding: 100px;
+
 }
 
 table {
@@ -41,4 +47,10 @@ a {
 a:hover {
     color: #ffaa00;
     text-decoration: underline;
+}
+
+.hi{
+    color:black;
+    font-size: 40px;
+    font-family: "Times New Roman", Times, serif;
 }
