@@ -5,11 +5,15 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
-    background-image:url("https://media.crictracker.com/media/featureimage/CT_347356.jpg");
+    background-image:url('https://i.pinimg.com/originals/a2/fe/21/a2fe21da9ce7d1698f5b48cdb506c853.jpg');
+
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
     padding: 100px;
+}
+h1{
+  margin: 5px;
 
 }
 
@@ -24,18 +28,18 @@ table {
 
 th, td {
     border: 1px solid #7289da;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
 }
 
 th {
-    background-color: #7289da;
+    background-color: lightseagreen;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 td {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 a {
@@ -50,7 +54,7 @@ a:hover {
 }
 
 .hi{
-    color:white;
+    color:whitesmoke;
     font-size: 40px;
     font-family: "Times New Roman", Times, serif;
 }
