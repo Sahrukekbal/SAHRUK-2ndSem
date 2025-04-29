@@ -5,12 +5,11 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
-    background-image:url('https://i.pinimg.com/originals/a2/fe/21/a2fe21da9ce7d1698f5b48cdb506c853.jpg');
-
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image:url('https://i.pinimg.com/736x/c4/4d/b7/c44db751dda9877e2ca7a7d72c292a04.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
     background-position:center;
-    padding: 10px;
+    padding: 50px;
 }
 h1{
   margin: 5px;
@@ -54,7 +53,7 @@ a:hover {
 }
 
 .hi{
-    color:black;
+    color:white;
     font-size: 40px;
     font-family: "Times New Roman", Times, serif;
 }
