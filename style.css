@@ -22,12 +22,84 @@
   
   /* Header */
   .header {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: linear-gradient(135deg, #c10c2a, #16213e);
     color: white;
     text-align: center;
-    padding: 50px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 60px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeInSlide 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
   }
+  
+  /* Stylish glowing border effect */
+  .header::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff004f, #1a1a2e, #6f00ff);
+    z-index: 0;
+    filter: blur(10px);
+    opacity: 0.6;
+    border-radius: 18px;
+    animation: glowMove 6s linear infinite;
+  }
+  
+  /* Keep header content above the glow */
+  .header > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Entrance animation */
+  @keyframes fadeInSlide {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Glow animation movement */
+  @keyframes glowMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Optional hover effect */
+  .header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+  }
+  
+  
+  /* Entrance animation */
+  @keyframes fadeInSlide {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Optional hover effect */
+  .header:hover {
+    background: linear-gradient(135deg, #0f3460, #1a1a2e);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  }
+  
   
   .header h1 {
     font-size: 2.8rem;
@@ -129,7 +201,6 @@
   
     .header h2,
     .header h3 {
-      font-size: 1rem;
-    }
-  }
-  
+      font-size: 1rem;
+    }
+  }
