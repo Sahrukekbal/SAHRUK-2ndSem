@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #477686;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            text-align: center;
+            width: 300px;
+
+        }
+
+        .box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+        }
+
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+
+        }
+
+        img {
+            width: 80px;
+            display: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Weather</h2>
+        <input id="city" placeholder="Enter city" />
+        <button onclick="getWeather()">Get Weather</button>
+        <img id="icon" src="https://cdn-icons-png.flaticon.com/512/1116/1116453.png" />
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function getWeather() {
+            const city = document.getElementById("city").value;
+            const result = document.getElementById("result");
+            const icon = document.getElementById("icon");
+
+            try {
+                const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
+                const data = await res.json();
+
+                if (!data.results) {
+                    result.innerHTML = "City not found.";
+                    icon.style.display = "none";
+                    return;
+                }
+
+                const { latitude, longitude, name } = data.results[0];
+                const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
+                const weatherData = await weatherRes.json();
+                const weather = weatherData.current_weather;
+
+                result.innerHTML = `
+                    <p><b>${name}</b></p>
+                    <p>${weather.temperature} °C, ${weather.windspeed} km/h wind</p>`;
+                icon.style.display = "block";
+            } catch (err) {
+                result.innerHTML = "Error fetching data.";
+                icon.style.display = "none";
+                console.error(err);
+            }
+        }
+    </script>
+</body>
+
+</html>
